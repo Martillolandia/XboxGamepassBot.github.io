@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <script>
+  function shareOnFacebook() {
+    // Reemplaza 'URL_DE_TU_PAGINA' por la URL real de tu página web
+    var url = 'URL_DE_TU_PAGINA';
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+  }
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Web Bot de Telegram</title>
+<style>
+    body {
+        background-color: #000033;
+        color: #ffffff;
+        text-align: center;
+    }
+    button {
+        background-color: #ADD8E6;
+        border: none;
+        color: #ffffff;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    #faq-popup {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 20px;
+        background-color: #000033;
+        color: #ffffff;
+        border: 2px solid #ADD8E6;
+        width: 300px;
+    }
+  #faq-button {
+    font-size: 40px;
+    position: fixed;
+    top: 0px;
+    right: 280px;
+}
+       button:nth-of-type(2) {
+    font-size: 40px;
+    position: fixed;
+    top: 0px;
+    right: 0px; /* Ajustar la posición según sea necesario */
+}
+  button:nth-of-type(3) {
+    font-size: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 200px; /* Ajustar el margen superior según sea necesario */
+}
+  footer { 
+    font-sizd: 20px;
+    margin-top: 300px;
+  }
+</style>
+</head>
+<body>
+
+<button id="faq-button"><i class="fas fa-question-circle"></i></button>
+<button onclick="shareOnFacebook()"><i class="fab fa-facebook"></i></button>
+<button onclick="showInfo()">Información</button>
+
+<div id="info" style="display: none;">
+    <p><strong>Esta es la página web del Bot de Telegram @GamePassXbox_bot</strong></p>
+    <p>Si consideras que dicho bot merece una recompensa por el buen trabajo y diversión que te ha brindado, podrías realizar una donación.</p>
+    <p>Me gustaría recalcar que el bot es sin fines de lucro y ha desarrollado en la plataforma de Telegram la posibilidad de realizar donaciones en línea desde su hogar u oficina, a través de los distintos medios o dispositivo que usted tiene a su disposición.</p>
+    <button id="donate-button" onclick="showDonate()">Realizar Donación</button>
+</div>
+
+<div id="donate" style="display: none;">
+    <p>Monto a Donar: <input type="text" id="donation-amount"></p>
+    <button id="continue-button" onclick="showPayment()">Siguiente</button>
+</div>
+
+<div id="payment" style="display: none;">
+    <p>Monto a donar: <span id="donation-amount-show"></span></p>
+    <p>Número a donar: +53 52575056</p>
+    <button onclick="donate()">Donar</button>
+</div>
+
+<div id="faq-popup">
+    <p><strong>Preguntas Frecuentes</strong></p>
+    <p>¿Cómo puedo realizar una donación?<br>Puedes realizar una donación ingresando un monto en el formulario y siguiendo los pasos indicados.</p>
+    <p>¿El bot de Telegram @GamePassXbox_bot es de libre uso?<br>Sí, el bot es gratuito y de uso público.</p>
+    <p>¿Dónde puedo obtener más información sobre el bot?<br>Puedes visitar el sitio oficial del bot en Telegram.</p>
+    <button id="close-popup">Cerrar</button>
+</div>
+
+<script>
+    document.getElementById("faq-button").addEventListener("click", function() {
+        document.getElementById("faq-popup").style.display = "block";
+    });
+
+    document.getElementById("close-popup").addEventListener("click", function() {
+        document.getElementById("faq-popup").style.display = "none";
+    });
+
+    function showInfo() {
+        document.getElementById("info").style.display = "block";
+    }
+
+    function showDonate() {
+        document.getElementById("info").style.display = "none";
+        document.getElementById("donate").style.display = "block";
+        document.getElementById("donation-amount").focus();
+    }
+
+    function showPayment() {
+        document.getElementById("donate").style.display = "none";
+        document.getElementById("payment").style.display = "block";
+        document.getElementById("donation-amount-show").innerText = document.getElementById("donation-amount").value;
+    }
+
+    function donate() {
+        window.location.href = "tel:*234%23";
+    }
+</script>
+
+</body>
+<footer>2024_@GamePassXbox_Bot</footer>
+</html>
